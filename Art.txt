@@ -1,0 +1,2 @@
+Art/chessboard.png*bg
+Art/bg-gradient.png*bg0
