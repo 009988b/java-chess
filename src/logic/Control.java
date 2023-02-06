@@ -87,8 +87,10 @@ public class Control{
 			StringTokenizer st = new StringTokenizer(raw, "*");
 			String file = st.nextToken();
 			String tag = st.nextToken();
-			System.out.println(tag);
+			System.out.println(file);
+			String currentDir = System.getProperty("user.dir");
 			backbuffer.addSprite(new Sprite(0, 0, file, tag));
+			System.out.println("Loading sprite: " + currentDir + "/" + file);
 		}
 	}
 	

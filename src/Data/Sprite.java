@@ -20,7 +20,9 @@ public class Sprite implements Runnable{
 	private String _tag;			// Used to find the sprite
 	public Sprite(int x, int y, String spriteFileName, String tag){
 		try {
+			//System.out.println(new File(spriteFileName).canRead());
 			_image = ImageIO.read(new File(spriteFileName));
+			//System.out.println(_image.getHeight());
 		} catch (IOException e) {
 			throw new IllegalArgumentException();
 		}

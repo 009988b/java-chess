@@ -66,9 +66,7 @@ public class Board{
     }
 
     public Piece findPieceAtCoord(Coord c) {
-        var ref = new Object() {
-            Piece p = null;
-        };
+        final Piece[] p = {null};
         int checks = 0;
         if (c.x >= 0 && c.x <= 7 && (c.y >= 0 && c.y <= 7)) {
             while (checks < 10) {
@@ -79,12 +77,12 @@ public class Board{
                         System.out.println("found");
                         System.out.println(piece);
                         if (piece != null)
-                            ref.p = piece;
+                            p[0] = piece;
                     }
                 });
                 checks++;
             }
         }
-        return ref.p;
+        return p[0];
     }
 }

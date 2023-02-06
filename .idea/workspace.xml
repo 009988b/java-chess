@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="b5fc3445-c721-4b85-89df-abf7bc49e765" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/Art.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Art.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Data Structures Final Gaming.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/Data/Sprite.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Data/Sprite.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/Data/gameString.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Data/gameString.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/FileIO/EZFileRead.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/FileIO/EZFileRead.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/FileIO/EZFileWrite.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/FileIO/EZFileWrite.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/Graphics/Graphic.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Graphics/Graphic.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/Graphics/Sprites.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Graphics/Sprites.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/Input/Keyb.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Input/Keyb.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/Main/Chess/Board$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/Main/Chess/Board.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Main/Chess/Board.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/Main/Chess/Pieces/Bishop.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Main/Chess/Pieces/Bishop.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/Main/Chess/Pieces/King.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Main/Chess/Pieces/King.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/Main/Chess/Pieces/Knight.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Main/Chess/Pieces/Knight.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/Main/Chess/Pieces/Pawn.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Main/Chess/Pieces/Pawn.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/Main/Chess/Pieces/Piece.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Main/Chess/Pieces/Piece.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/Main/Chess/Pieces/Queen.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Main/Chess/Pieces/Queen.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/Main/Chess/Pieces/Rook.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Main/Chess/Pieces/Rook.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/Main/Coord.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Main/Coord.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/Main/KeyProcessor.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Main/KeyProcessor.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/Main/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Main/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/Main/Player.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Main/Player.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/gameloop/Renderer.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/gameloop/Renderer.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/gameloop/gameLoop.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/gameloop/gameLoop.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/logic/Control.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/logic/Control.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/timer/stopWatchX.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/timer/stopWatchX.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Data/Sprite.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Data/Sprite.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Graphics/Graphic.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Graphics/Graphic.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Main/Chess/Board.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main/Chess/Board.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Main/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/logic/Control.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/logic/Control.java" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectId" id="2LN2t3TepunBOWehoCdhGTdVBBA" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/Users/sean/java-chess&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;project.propVCSSupport.Mappings&quot;
+  }
+}</component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="b5fc3445-c721-4b85-89df-abf7bc49e765" name="Changes" comment="" />
+      <created>1675697431877</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1675697431877</updated>
+      <workItem from="1675697433778" duration="17000" />
+      <workItem from="1675697586655" duration="4307000" />
+      <workItem from="1675709150087" duration="201000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+</project>

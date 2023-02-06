@@ -97,19 +97,21 @@ public class Graphic extends JFrame{
 		setUndecorated(true);
 		setResizable(false);
 		setIgnoreRepaint(true);
-		gd.setFullScreenWindow(this);
+		gd.setFullScreenWindow(null);
 		DisplayMode[] dms = gd.getDisplayModes();
 		boolean isSupported = false;
-		int vindexN3 = isSupported(1280, 720, 32, dms);
+		int vindexN3 = isSupported(1280, 800, 32, dms);
 		if(vindexN3 != -1){			// 720p supported
 			_dm = dms[vindexN3]; 
 			isSupported = true;
 		}
 		
 		if(isSupported == false)
-			errorClose("Display mode not supported. Must have support for 1280 x 720 resolution monitor mode."); //$NON-NLS-1$
+			errorClose("Display mode not supported. Must have support for 1280 x 800 resolution monitor mode."); //$NON-NLS-1$
 		
-		gd.setDisplayMode(_dm);
+		//gd.setDisplayMode(_dm);
+		setSize(1280,720);
+		setVisible(true);
 		createBufferStrategy(2);						// Create double buffering
 		_x = _dm.getWidth();
 		_y = _dm.getHeight();

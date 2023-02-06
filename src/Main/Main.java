@@ -63,7 +63,6 @@ public class Main{
 			if (piece != null) {
 				int x = (1280/2)-(512/2)+24+(64*coord.x);
 				int y = (720/2)-(512/2)+32+(64*coord.y);
-
 				ctrl.drawString(x,y,piece.label, Color.BLUE);
 			}
 		});
@@ -138,7 +137,7 @@ public class Main{
 		ctrl.drawString(selected_pt.x,selected_pt.y,"S", Color.ORANGE);
 		if (destination != null) {
 			Coord destination_pt = getScreenPt(destination);
-			ctrl.drawString(destination_pt.x,destination_pt.x,"D", Color.RED);
+			ctrl.drawString(destination_pt.x,destination_pt.y,"D", Color.RED);
 			ctrl.drawString(950, 430, letters[selected.x] + "" + (8-selected.y) + " to " + letters[destination.x] + "" + (8- destination.y) + "?" , Color.WHITE);
 			ctrl.drawString(950, 480, "[M] to confirm move." , Color.WHITE);
 			ctrl.drawString(950, 530, "[BACKSPC] to change destination" , Color.WHITE);
