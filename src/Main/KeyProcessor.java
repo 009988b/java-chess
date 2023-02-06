@@ -62,7 +62,7 @@ public class KeyProcessor{
 		case 'q':
 			if (Main.selectedPiece != null) {
 				Main.gameStatus = "move_unit";
-			}l
+			}
 			break;
 		case 'm':
 			// For mouse coordinates
