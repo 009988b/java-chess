@@ -114,12 +114,12 @@ public class Main{
 			int xs = (1280/2)-(512/2)+24+(64* selected.x);
 			int ys = (720/2)-(512/2)+32+(64* selected.y);
 			if (selectedPiece != null) {
-				ctrl.drawString(916, 300, "Selected [" + selectedPiece.label + "] at " + letters[selected.x] + "" + (8-selected.y), Color.WHITE);
-				ctrl.drawString(916, 350, "owned by: Player " + selectedPiece.team , Color.WHITE);
-				ctrl.drawString(916, 380, gameStatus , Color.WHITE);
+				ctrl.drawString(950, 300, "Selected [" + selectedPiece.label + "] at " + letters[selected.x] + "" + (8-selected.y), Color.WHITE);
+				ctrl.drawString(950, 350, "owned by: Player " + selectedPiece.team , Color.WHITE);
+				ctrl.drawString(950, 380, gameStatus , Color.WHITE);
 			}
 			if (destination == null) {
-				ctrl.drawString(916, 530, "Press [BACKSPC] to select a different unit" , Color.WHITE);
+				ctrl.drawString(950, 530, "Press [BACKSPC] to select a different unit" , Color.WHITE);
 			}
 			ctrl.drawString(xs,ys,"S", Color.ORANGE);
 		}
@@ -132,26 +132,23 @@ public class Main{
 	}
 	// Handles unit movement destination selection and confirmation
 	private static void handleMovement(Control ctrl) {
-		int x = (1280/2)-(512/2)+24+(64*cursor.x);
-		int y = (720/2)-(512/2)+32+(64* cursor.y);
-		ctrl.drawString(x,y,"C", Color.GREEN);
-		int xs = (1280/2)-(512/2)+24+(64* selected.x);
-		int ys = (720/2)-(512/2)+32+(64* selected.y);
-		ctrl.drawString(xs,ys,"S", Color.ORANGE);
+		Coord cursor_pt = getScreenPt(cursor);
+		ctrl.drawString(cursor_pt.x,cursor_pt.y,"C", Color.GREEN);
+		Coord selected_pt = getScreenPt(selected);
+		ctrl.drawString(selected_pt.x,selected_pt.y,"S", Color.ORANGE);
 		if (destination != null) {
-			int xd = (1280/2)-(512/2)+24+(64* destination.x);
-			int yd = (720/2)-(512/2)+32+(64* destination.y);
-			ctrl.drawString(xd,yd,"D", Color.RED);
-			ctrl.drawString(916, 430, "[" + selectedPiece.label + "] to" + letters[destination.x] + "" + (8- destination.y) + "?" , Color.WHITE);
-			ctrl.drawString(916, 480, "[M] to confirm move." , Color.WHITE);
-			ctrl.drawString(916, 530, "[BACKSPC] to change destination" , Color.WHITE);
+			Coord destination_pt = getScreenPt(destination);
+			ctrl.drawString(destination_pt.x,destination_pt.x,"D", Color.RED);
+			ctrl.drawString(950, 430, letters[selected.x] + "" + (8-selected.y) + " to " + letters[destination.x] + "" + (8- destination.y) + "?" , Color.WHITE);
+			ctrl.drawString(950, 480, "[M] to confirm move." , Color.WHITE);
+			ctrl.drawString(950, 530, "[BACKSPC] to change destination" , Color.WHITE);
 		}
-		ctrl.drawString(916, 300, "Selected [" + selectedPiece.label + "] at " + letters[selected.x] + "" + (8-selected.y), Color.WHITE);
-		ctrl.drawString(916, 350, "owned by: Player " + selectedPiece.team , Color.WHITE);
+		ctrl.drawString(950, 300, "Selected [" + selectedPiece.label + "] at " + letters[selected.x] + "" + (8-selected.y), Color.WHITE);
+		ctrl.drawString(950, 350, "owned by: Player " + selectedPiece.team , Color.WHITE);
 		if (destination == null) {
-			ctrl.drawString(916, 530, "[BACKSPC] to select a different unit" , Color.WHITE);
+			ctrl.drawString(950, 530, "[BACKSPC] to select a different unit" , Color.WHITE);
 		}
-		ctrl.drawString(916, 380, gameStatus , Color.WHITE);
+		ctrl.drawString(950, 380, gameStatus , Color.WHITE);
 		ArrayList<Coord> valid_moves = Main.selectedPiece.findValidDestinations(board);
 		valid_moves.forEach((m) -> {
 			Coord pt = getScreenPt(m);
