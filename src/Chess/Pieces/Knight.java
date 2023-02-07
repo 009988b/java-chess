@@ -1,6 +1,6 @@
-package Main.Chess.Pieces;
+package Chess.Pieces;
 
-import Main.Coord;
+import Chess.Coord;
 
 public class Knight extends Piece {
 

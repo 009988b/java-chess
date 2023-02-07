@@ -18,8 +18,7 @@ import java.awt.event.MouseListener;
 import java.awt.geom.AffineTransform;
 import java.awt.image.BufferedImage;
 
-import javax.swing.JFrame;
-import javax.swing.JOptionPane;
+import javax.swing.*;
 
 import FileIO.EZFileWrite;
 
@@ -90,7 +89,7 @@ public class Graphic extends JFrame{
 		gd.setFullScreenWindow(null);
 	}
 	
-	private void init(){
+	private void init() {
 		gd = GraphicsEnvironment.getLocalGraphicsEnvironment().getDefaultScreenDevice();
 		if(gd.isFullScreenSupported() == false)
 			errorClose("Full Screen is not supported...exiting."); //$NON-NLS-1$
@@ -108,7 +107,7 @@ public class Graphic extends JFrame{
 		
 		if(isSupported == false)
 			//errorClose("Display mode not supported. Must have support for 1280 x 800 resolution monitor mode."); //$NON-NLS-1$
-		
+		setTitle("Chess");
 		//gd.setDisplayMode(_dm);
 		setSize(1280,720);
 		setVisible(true);

@@ -1,6 +1,6 @@
-package Main;
+package Chess;
 
-import Main.Chess.Pieces.*;
+import Chess.Pieces.*;
 
 import java.util.List;
 

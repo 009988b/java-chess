@@ -17,8 +17,8 @@ import FileIO.EZFileRead;
 import Graphics.Graphic;
 import Graphics.Sprites;
 import Input.Keyb;
-import Main.KeyProcessor;
-import Main.Main;
+import Chess.KeyProcessor;
+import Chess.Main;
 import gameloop.gameLoop;
 
 public class Control{
@@ -78,7 +78,7 @@ public class Control{
 		s.moveYAbsolute(y);
 		frontbuffer.addSprite(s);
 	}
-	
+
 	// WARNING! DO NOT MODIFY THE CODE HERE! THIS IS HERE TO GET THE GAME LIBRARY TO WORK!
 	private void loadArtIntoBackBuffer(){
 		EZFileRead ezr = new EZFileRead("Art.txt");

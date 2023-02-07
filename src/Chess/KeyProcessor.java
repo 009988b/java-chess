@@ -1,8 +1,7 @@
 /* This will handle the "Hot Key" system. */
 
-package Main;
+package Chess;
 
-import logic.Control;
 import timer.stopWatchX;
 
 public class KeyProcessor{
@@ -46,9 +45,24 @@ public class KeyProcessor{
 			break;
 		case '=':
 			if (Main.gameStatus == "move_unit") {
-				Main.destination = Main.cursor;
+				if (Main.validMoves.contains(Main.cursor))
+					Main.destination = Main.cursor;
 				break;
 			}
+			if (Main.selectedPiece != null) {
+				if (Main.destination != null) {
+					Main.selectedPiece.move(Main.board);
+					Main.gameStatus = "select_unit";
+					Main.errorMsg = "";
+					Main.destination = null;
+					break;
+				}
+				if (Main.selected.x == Main.cursor.x && Main.selected.y == Main.cursor.y) {
+					Main.gameStatus = "move_unit";
+					break;
+				}
+			}
+
 			Main.selectedPiece = null;
 			Main.selected = Main.cursor;
 			break;
@@ -59,19 +73,9 @@ public class KeyProcessor{
 			}
 			Main.selected = null;
 			break;
-		case 'q':
-			if (Main.selectedPiece != null) {
-				Main.gameStatus = "move_unit";
-			}
-			break;
 		case 'm':
 			// For mouse coordinates
 			//Control.isMouseCoordsDisplayed = !Control.isMouseCoordsDisplayed;
-			if (Main.destination != null) {
-				Main.selectedPiece.move(Main.board);
-				Main.gameStatus = "select_unit";
-				Main.destination = null;
-			}
 			break;
 		}
 	}

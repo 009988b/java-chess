@@ -1,10 +1,8 @@
-package Main.Chess;
+package Chess;
 
-import Main.Chess.Pieces.*;
-import Main.Coord;
+import Chess.Pieces.*;
 
 import java.util.HashMap;
-import java.util.concurrent.atomic.AtomicReference;
 
 public class Board{
     public HashMap<Coord, Piece> board;

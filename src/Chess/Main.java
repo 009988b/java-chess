@@ -1,11 +1,12 @@
-package Main;
+package Chess;
 
 import java.awt.Color;
 import java.util.ArrayList;
 
-import Main.Chess.Board;
-import Main.Chess.Pieces.Piece;
+import Chess.Pieces.Piece;
 import logic.Control;
+
+import javax.swing.*;
 
 
 public class Main{
@@ -27,7 +28,16 @@ public class Main{
 	
 	public static Piece selectedPiece;
 
+	public static String errorMsg;
+
+	private static int currentTeam;
+
+	public static ArrayList<Coord> validMoves;
 	public static void main(String[] args) {
+		System.setProperty("apple.laf.useScreenMenuBar", "true");
+		System.setProperty("com.apple.mrj.application.apple.menu.about.name", "Chess");
+		System.setProperty("apple.awt.application.name", "Chess");
+
 		Control ctrl = new Control();				// Do NOT remove!
 		ctrl.gameLoop();							// Do NOT remove!
 	}
@@ -36,6 +46,7 @@ public class Main{
 	public static void start(){
 		// TODO: Code your starting conditions here...NOT DRAW CALLS HERE! (no addSprite or drawString)
 		turnCount = 1;
+		errorMsg = "";
 		p1 = new Player();
 		p2 = new Player();
 		board = new Board();
@@ -59,6 +70,8 @@ public class Main{
 	public static void update(Control ctrl) {
 		// TODO: This is where you can code! (Starting code below is just to show you how it works)
 		drawBoard(ctrl);
+
+		ctrl.drawString(1280/2, 30, errorMsg, Color.PINK);
 		board.board.forEach((coord,piece) -> {
 			if (piece != null) {
 				int x = (1280/2)-(512/2)+24+(64*coord.x);
@@ -68,16 +81,11 @@ public class Main{
 		});
 		ctrl.drawString(1000, 200, "Turn #" + turnCount, Color.WHITE);
 		if (turnCount % 2 != 0) {
-			ctrl.drawString(1000, 250, "Player " + p1.team + "'s turn", Color.WHITE);
-			if (gameStatus == "move_unit") {
-				handleMovement(ctrl);
-			}
-			if (gameStatus == "select_unit") {
-				handleSelection(ctrl);
-			}
+			play(ctrl);
+			currentTeam = 0;
 		} else {
-			ctrl.drawString(1000, 250, "Player " + p2.team + "'s turn", Color.WHITE);
-			handleSelection(ctrl);
+			play(ctrl);
+			currentTeam = 1;
 		}
 	}
 
@@ -94,8 +102,18 @@ public class Main{
 		for (int j = 0; j < 8; j++) {
 			ctrl.drawString((1280/2)-(512/2)+32+(64*j),(1280/2), letters[j], Color.WHITE);
 		}
-
 	}
+	// Game loop
+	private static void play(Control ctrl) {
+		ctrl.drawString(1000, 250, "Player " + (currentTeam+1) + "'s turn", Color.WHITE);
+		if (gameStatus == "move_unit") {
+			handleMovement(ctrl);
+		}
+		if (gameStatus == "select_unit") {
+			handleSelection(ctrl);
+		}
+	}
+
 	// Handles cursor drawing and unit selection logic
 	private static void handleSelection(Control ctrl) {
 		int x = (1280/2)-(512/2)+24+(64*cursor.x);
@@ -112,10 +130,16 @@ public class Main{
 			}
 			int xs = (1280/2)-(512/2)+24+(64* selected.x);
 			int ys = (720/2)-(512/2)+32+(64* selected.y);
-			if (selectedPiece != null) {
-				ctrl.drawString(950, 300, "Selected [" + selectedPiece.label + "] at " + letters[selected.x] + "" + (8-selected.y), Color.WHITE);
-				ctrl.drawString(950, 350, "owned by: Player " + selectedPiece.team , Color.WHITE);
-				ctrl.drawString(950, 380, gameStatus , Color.WHITE);
+			if (selectedPiece.team == currentTeam) {
+				if (selectedPiece != null) {
+					ctrl.drawString(950, 300, "Selected [" + selectedPiece.label + "] at " + letters[selected.x] + "" + (8-selected.y), Color.WHITE);
+					ctrl.drawString(950, 350, "owned by: Player " + selectedPiece.team , Color.WHITE);
+					ctrl.drawString(950, 380, gameStatus , Color.WHITE);
+					errorMsg = "";
+				}
+			} else {
+				errorMsg = "Error: Cannot select Player " + (selectedPiece.team+1) + "'s piece.";
+				selectedPiece = null;
 			}
 			if (destination == null) {
 				ctrl.drawString(950, 530, "Press [BACKSPC] to select a different unit" , Color.WHITE);
@@ -139,7 +163,7 @@ public class Main{
 			Coord destination_pt = getScreenPt(destination);
 			ctrl.drawString(destination_pt.x,destination_pt.y,"D", Color.RED);
 			ctrl.drawString(950, 430, letters[selected.x] + "" + (8-selected.y) + " to " + letters[destination.x] + "" + (8- destination.y) + "?" , Color.WHITE);
-			ctrl.drawString(950, 480, "[M] to confirm move." , Color.WHITE);
+			ctrl.drawString(950, 480, "[ENTER] again to confirm move." , Color.WHITE);
 			ctrl.drawString(950, 530, "[BACKSPC] to change destination" , Color.WHITE);
 		}
 		ctrl.drawString(950, 300, "Selected [" + selectedPiece.label + "] at " + letters[selected.x] + "" + (8-selected.y), Color.WHITE);
@@ -148,8 +172,8 @@ public class Main{
 			ctrl.drawString(950, 530, "[BACKSPC] to select a different unit" , Color.WHITE);
 		}
 		ctrl.drawString(950, 380, gameStatus , Color.WHITE);
-		ArrayList<Coord> valid_moves = Main.selectedPiece.findValidDestinations(board);
-		valid_moves.forEach((m) -> {
+		validMoves = Main.selectedPiece.findValidDestinations(board);
+		validMoves.forEach((m) -> {
 			Coord pt = getScreenPt(m);
 			ctrl.drawString(pt.x,pt.y,"*", Color.YELLOW);
 		});

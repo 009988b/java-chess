@@ -1,9 +1,9 @@
-package Main.Chess.Pieces;
+package Chess.Pieces;
 
 
-import Main.Chess.Board;
-import Main.Coord;
-import Main.*;
+import Chess.Board;
+import Chess.Coord;
+import Chess.*;
 
 import java.util.ArrayList;
 
