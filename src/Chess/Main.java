@@ -70,15 +70,8 @@ public class Main{
 	public static void update(Control ctrl) {
 		// TODO: This is where you can code! (Starting code below is just to show you how it works)
 		drawBoard(ctrl);
-
+		drawPieces(ctrl);
 		ctrl.drawString(1280/2, 30, errorMsg, Color.PINK);
-		board.board.forEach((coord,piece) -> {
-			if (piece != null) {
-				int x = (1280/2)-(512/2)+24+(64*coord.x);
-				int y = (720/2)-(512/2)+32+(64*coord.y);
-				ctrl.drawString(x,y,piece.label, Color.BLUE);
-			}
-		});
 		ctrl.drawString(1000, 200, "Turn #" + turnCount, Color.WHITE);
 		if (turnCount % 2 != 0) {
 			play(ctrl);
@@ -93,6 +86,15 @@ public class Main{
 		cursor = new Coord(cursor.x+by.x, cursor.y+by.y);
 	}
 	// Draws game board on to screen with labels
+	public static void drawPieces(Control ctrl) {
+		board.board.forEach((coord,piece) -> {
+			if (piece != null) {
+				int x = (1280/2)-(512/2)+24+(64*coord.x);
+				int y = (720/2)-(512/2)+32+(64*(coord.y));
+				ctrl.drawString(x,y,piece.label, Color.BLUE);
+			}
+		});
+	}
 	private static void drawBoard(Control ctrl) {
 		ctrl.addSpriteToFrontBuffer(0,0,"bg0");
 		ctrl.addSpriteToFrontBuffer((1280/2)-(512/2),(720/2)-(512/2),"bg");
@@ -106,7 +108,7 @@ public class Main{
 	// Game loop
 	private static void play(Control ctrl) {
 		ctrl.drawString(1000, 250, "Player " + (currentTeam+1) + "'s turn", Color.WHITE);
-		if (gameStatus == "move_unit") {
+		if (gameStatus == "move_unit" || gameStatus == "confirm_move") {
 			handleMovement(ctrl);
 		}
 		if (gameStatus == "select_unit") {
@@ -130,21 +132,24 @@ public class Main{
 			}
 			int xs = (1280/2)-(512/2)+24+(64* selected.x);
 			int ys = (720/2)-(512/2)+32+(64* selected.y);
-			if (selectedPiece.team == currentTeam) {
-				if (selectedPiece != null) {
+			if (selectedPiece != null) {
+				if (selectedPiece.team == currentTeam) {
 					ctrl.drawString(950, 300, "Selected [" + selectedPiece.label + "] at " + letters[selected.x] + "" + (8-selected.y), Color.WHITE);
 					ctrl.drawString(950, 350, "owned by: Player " + selectedPiece.team , Color.WHITE);
 					ctrl.drawString(950, 380, gameStatus , Color.WHITE);
 					errorMsg = "";
+				} else {
+					errorMsg = "Error: Cannot select Player " + (selectedPiece.team+1) + "'s piece.";
+					selectedPiece = null;
 				}
-			} else {
-				errorMsg = "Error: Cannot select Player " + (selectedPiece.team+1) + "'s piece.";
-				selectedPiece = null;
 			}
 			if (destination == null) {
 				ctrl.drawString(950, 530, "Press [BACKSPC] to select a different unit" , Color.WHITE);
 			}
 			ctrl.drawString(xs,ys,"S", Color.ORANGE);
+			if (cursor.equals(selected)) {
+				ctrl.drawString(950, 480, "Press [ENTER] to move this unit" , Color.WHITE);
+			}
 		}
 	}
 	// Get screen point from board pt
@@ -160,6 +165,9 @@ public class Main{
 		Coord selected_pt = getScreenPt(selected);
 		ctrl.drawString(selected_pt.x,selected_pt.y,"S", Color.ORANGE);
 		if (destination != null) {
+			if (Main.validMoves.contains(Main.destination)) {
+				Main.gameStatus = "confirm_move";
+			}
 			Coord destination_pt = getScreenPt(destination);
 			ctrl.drawString(destination_pt.x,destination_pt.y,"D", Color.RED);
 			ctrl.drawString(950, 430, letters[selected.x] + "" + (8-selected.y) + " to " + letters[destination.x] + "" + (8- destination.y) + "?" , Color.WHITE);
@@ -167,7 +175,7 @@ public class Main{
 			ctrl.drawString(950, 530, "[BACKSPC] to change destination" , Color.WHITE);
 		}
 		ctrl.drawString(950, 300, "Selected [" + selectedPiece.label + "] at " + letters[selected.x] + "" + (8-selected.y), Color.WHITE);
-		ctrl.drawString(950, 350, "owned by: Player " + selectedPiece.team , Color.WHITE);
+		ctrl.drawString(950, 350, "owned by: Player " + selectedPiece.team+1 , Color.WHITE);
 		if (destination == null) {
 			ctrl.drawString(950, 530, "[BACKSPC] to select a different unit" , Color.WHITE);
 		}

@@ -11,9 +11,12 @@ abstract public class Piece{
     public int team;
     public String label;
     public Coord currentPos;
+
+    public Coord lastPos;
     public Piece(int team, Coord pos) {
         this.team = team;
         this.currentPos = pos;
+        this.lastPos = null;
         this.label = "";
     }
 
@@ -21,24 +24,30 @@ abstract public class Piece{
         return null;
     }
     public void move(Board b) {
-        b.board.forEach((coord,piece) -> {
-            if (coord.x == currentPos.x && coord.y == currentPos.y) {
-                b.board.replace(coord, null);
+        //Piece p = b.board.get(currentPos);
+        //b.board.replace(currentPos,null);
+        b.board.remove(Main.destination);
+        b.board.put(Main.destination,Main.selectedPiece);
+        b.board.remove(currentPos);
+        b.board.put(currentPos,null);
+        b.board.forEach((coord, piece) -> {
+            if (coord.equals(currentPos)) {
+                System.out.println("currentPos:");
+                System.out.println(coord.x+""+coord.y+"piece:"+piece);
             }
-            if (coord.x == Main.destination.x && coord.y == Main.destination.y) {
-                if (piece != null) {
-                    if (piece.team != this.team) {
-                        //oppposing piece destroyed
-                        b.board.replace(coord, null);
-                    }
-                }
-                currentPos = Main.destination;
-                b.board.replace(coord, this);
-                //Main.destination = null;
-                Main.gameStatus = "select_unit";
-                Main.turnCount++;
+            if (coord.equals(Main.destination)) {
+                System.out.println("destination:");
+                System.out.println(coord.x+""+coord.y+"piece:"+piece);
             }
         });
+        System.out.println(b.board.get(currentPos));
+        currentPos = Main.destination;
+        Main.destination = null;
+        Main.selectedPiece = null;
+        Main.selected = null;
+        Main.gameStatus = "select_unit";
+        Main.turnCount++;
+        Main.errorMsg = "";
     }
 
     public int getPathObstructedIdx(ArrayList<Coord> path, Board b) {

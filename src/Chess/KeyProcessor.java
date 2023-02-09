@@ -44,38 +44,45 @@ public class KeyProcessor{
 			}
 			break;
 		case '=':
+			if (Main.gameStatus == "confirm_move") {
+				if (Main.destination != null) {
+					//System.out.println(Main.selectedPiece);
+					if (Main.selectedPiece != null)
+						Main.selectedPiece.move(Main.board);
+					break;
+				}
+			}
 			if (Main.gameStatus == "move_unit") {
 				if (Main.validMoves.contains(Main.cursor))
 					Main.destination = Main.cursor;
 				break;
 			}
-			if (Main.selectedPiece != null) {
-				if (Main.destination != null) {
-					Main.selectedPiece.move(Main.board);
-					Main.gameStatus = "select_unit";
-					Main.errorMsg = "";
-					Main.destination = null;
-					break;
-				}
+			if (Main.selectedPiece != null && Main.selected != null) {
 				if (Main.selected.x == Main.cursor.x && Main.selected.y == Main.cursor.y) {
 					Main.gameStatus = "move_unit";
 					break;
 				}
 			}
-
 			Main.selectedPiece = null;
 			Main.selected = Main.cursor;
 			break;
 		case '*':
-			if (Main.gameStatus == "move_unit") {
+			if (Main.gameStatus == "move_unit" || Main.gameStatus == "confirm_move") {
 				Main.gameStatus = "select_unit";
+				Main.destination = null;
+				Main.selected = null;
 				break;
 			}
-			Main.selected = null;
+			if (Main.gameStatus == "select_unit") {
+				Main.selected = null;
+				break;
+			}
 			break;
 		case 'm':
 			// For mouse coordinates
 			//Control.isMouseCoordsDisplayed = !Control.isMouseCoordsDisplayed;
+			System.out.println(Main.destination.x + "," + Main.destination.y + ", piece: [" + Main.selectedPiece.label + "]");
+
 			break;
 		}
 	}

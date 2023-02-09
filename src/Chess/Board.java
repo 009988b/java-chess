@@ -30,8 +30,9 @@ public class Board{
                     if (i == 3) {
                         board.put(pos, new Queen(1,pos));
                     }
-                }
-                if (j == 1) {
+                   // System.out.println(pos.x+""+pos.y+""+board.get(pos)+" "+pos.hashCode());
+
+                } else if (j == 1) {
                     board.put(pos, new Pawn(1,pos));
                 }
                 //WHITE PLAYER'S PIECES
@@ -58,6 +59,10 @@ public class Board{
                 }
             }
         }
+        board.forEach((coord,piece) -> {
+            if (piece != null)
+                System.out.println(coord.x+""+coord.y+""+piece+" "+coord.hashCode());
+        });
     }
     public Board() {
         init();
@@ -70,10 +75,6 @@ public class Board{
             while (checks < 10) {
                 this.board.forEach((coord, piece) -> {
                     if (coord.x == c.x & coord.y == c.y) {
-                        System.out.println("searching for:" +c.x+","+c.y);
-                        System.out.println(coord.x+","+coord.y);
-                        System.out.println("found");
-                        System.out.println(piece);
                         if (piece != null)
                             p[0] = piece;
                     }

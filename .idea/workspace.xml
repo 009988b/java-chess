@@ -2,38 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b5fc3445-c721-4b85-89df-abf7bc49e765" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/.name" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/Graphics/Graphic.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Graphics/Graphic.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/Main/Chess/Board.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/Main/Chess/Pieces/Bishop.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/Main/Chess/Pieces/King.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/Main/Chess/Pieces/Knight.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/Main/Chess/Pieces/Pawn.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/Main/Chess/Pieces/Piece.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/Main/Chess/Pieces/Queen.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/Main/Chess/Pieces/Rook.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/Main/Coord.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/Main/KeyProcessor.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/Main/Main.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/Main/Player.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/logic/Control.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/logic/Control.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Graphics/Graphic.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Graphics/Graphic.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Main/Chess/Board.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Chess/Board.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Main/Chess/Pieces/Bishop.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Chess/Pieces/Bishop.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Main/Chess/Pieces/King.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Chess/Pieces/King.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Main/Chess/Pieces/Knight.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Chess/Pieces/Knight.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Main/Chess/Pieces/Pawn.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Chess/Pieces/Pawn.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Main/Chess/Pieces/Piece.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Chess/Pieces/Piece.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Main/Chess/Pieces/Queen.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Chess/Pieces/Queen.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Main/Chess/Pieces/Rook.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Chess/Pieces/Rook.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Main/Coord.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Chess/Coord.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Main/KeyProcessor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Chess/KeyProcessor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Main/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Chess/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Main/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Chess/Player.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/logic/Control.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/logic/Control.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Chess/Board.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Chess/Board.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Chess/Coord.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Chess/Coord.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Chess/KeyProcessor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Chess/KeyProcessor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Chess/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Chess/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Chess/Pieces/Piece.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Chess/Pieces/Piece.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -51,20 +25,20 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "C:/Users/hulas/Desktop/Gaming API/Data Structures Final Gaming",
-    "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "Modules",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.2",
-    "settings.editor.selected.configurable": "project.propVCSSupport.Mappings"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/hulas/Desktop/Gaming API/Data Structures Final Gaming&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;project.propVCSSupport.Mappings&quot;
   }
-}]]></component>
+}</component>
   <component name="RunManager">
     <configuration name="Chess" type="Application" factoryName="Application">
       <envs>
@@ -90,6 +64,9 @@
       <workItem from="1675697586655" duration="4307000" />
       <workItem from="1675709150087" duration="201000" />
       <workItem from="1675713815839" duration="240000" />
+      <workItem from="1675819209989" duration="401000" />
+      <workItem from="1675956851510" duration="6256000" />
+      <workItem from="1675976514654" duration="776000" />
     </task>
     <servers />
   </component>
@@ -106,5 +83,15 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <breakpoint enabled="true" type="java-exception">
+          <properties class="java.lang.NullPointerException" package="java.lang" />
+          <option name="timeStamp" value="1" />
+        </breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>
