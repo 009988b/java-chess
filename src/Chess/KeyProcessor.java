@@ -19,71 +19,72 @@ public class KeyProcessor{
 		sw.resetWatch();
 		
 		/* TODO: You can modify values below here! */
-		switch(key){
+		/*switch(key){
 		case '%':								// ESC key
 			System.exit(0);
 			break;
 		case 'w':
-			if (Main.cursor.y > 0 ) {
-				Main.moveCursor(new Coord(0,-1));
+			if (Main.game.cursor.y > 0 ) {
+				Main.game.moveCursor(new Coord(0,-1));
 			}
 			break;
 		case 'a':
-			if (Main.cursor.x > 0) {
-				Main.moveCursor(new Coord(-1,0));
+			if (Main.game.cursor.x > 0) {
+				Main.game.moveCursor(new Coord(-1,0));
 			}
 			break;
 		case 's':
-			if (Main.cursor.y < 7) {
-				Main.moveCursor(new Coord(0,1));
+			if (Main.game.cursor.y < 7) {
+				Main.game.moveCursor(new Coord(0,1));
 			}
 			break;
 		case 'd':
-			if (Main.cursor.x < 7) {
-				Main.moveCursor(new Coord(1,0));
+			if (Main.game.cursor.x < 7) {
+				Main.game.moveCursor(new Coord(1,0));
 			}
 			break;
 		case '=':
-			if (Main.gameStatus == "confirm_move") {
-				if (Main.destination != null) {
-					//System.out.println(Main.selectedPiece);
-					if (Main.selectedPiece != null)
-						Main.selectedPiece.move(Main.board);
+			if (Main.game.status == "confirm_move") {
+				if (Main.game.destination != null) {
+					//System.out.println(Main.game.selectedPiece);
+					if (Main.game.selectedPiece != null)
+						Main.game.selectedPiece.move(Main.game.board);
 					break;
 				}
 			}
-			if (Main.gameStatus == "move_unit") {
-				if (Main.validMoves.contains(Main.cursor))
-					Main.destination = Main.cursor;
+			if (Main.game.status == "move_unit") {
+				if (Main.game.validMoves.contains(Main.game.cursor))
+					Main.game.destination = Main.game.cursor;
 				break;
 			}
-			if (Main.selectedPiece != null && Main.selected != null) {
-				if (Main.selected.x == Main.cursor.x && Main.selected.y == Main.cursor.y) {
-					Main.gameStatus = "move_unit";
+			if (Main.game.selectedPiece != null && Main.game.selected != null) {
+				if (Main.game.selected.x == Main.game.cursor.x && Main.game.selected.y == Main.game.cursor.y) {
+					Main.game.status = "move_unit";
 					break;
 				}
 			}
-			Main.selectedPiece = null;
-			Main.selected = Main.cursor;
+			Main.game.selectedPiece = null;
+			Main.game.selected = Main.game.cursor;
 			break;
 		case '*':
-			if (Main.gameStatus == "move_unit" || Main.gameStatus == "confirm_move") {
-				Main.gameStatus = "select_unit";
-				Main.destination = null;
-				Main.selected = null;
+			if (Main.game.status == "move_unit" || Main.game.status == "confirm_move") {
+				Main.game.status = "select_unit";
+				Main.game.destination = null;
+				Main.game.selected = null;
 				break;
 			}
-			if (Main.gameStatus == "select_unit") {
-				Main.selected = null;
+			if (Main.game.status == "select_unit") {
+				Main.game.selected = null;
 				break;
 			}
 			break;
 		case 'm':
 			// For mouse coordinates
 			//Control.isMouseCoordsDisplayed = !Control.isMouseCoordsDisplayed;
-			System.out.println(Main.destination.x + "," + Main.destination.y + ", piece: [" + Main.selectedPiece.label + "]");
+			System.out.println(Main.game.destination.x + "," + Main.game.destination.y + ", piece: [" + Main.game.selectedPiece.label + "]");
 
 			break;
-		}
+		}*/
+		Main.game.handleInput(key);
 	}
 }

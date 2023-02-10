@@ -26,8 +26,9 @@ abstract public class Piece{
     public void move(Board b) {
         //Piece p = b.board.get(currentPos);
         //b.board.replace(currentPos,null);
-        b.board.remove(Main.destination);
-        b.board.put(Main.destination,Main.selectedPiece);
+        Game g = Main.game;
+        b.board.remove(g.destination);
+        b.board.put(g.destination,g.selectedPiece);
         b.board.remove(currentPos);
         b.board.put(currentPos,null);
         b.board.forEach((coord, piece) -> {
@@ -35,19 +36,19 @@ abstract public class Piece{
                 System.out.println("currentPos:");
                 System.out.println(coord.x+""+coord.y+"piece:"+piece);
             }
-            if (coord.equals(Main.destination)) {
+            if (coord.equals(g.destination)) {
                 System.out.println("destination:");
                 System.out.println(coord.x+""+coord.y+"piece:"+piece);
             }
         });
         System.out.println(b.board.get(currentPos));
-        currentPos = Main.destination;
-        Main.destination = null;
-        Main.selectedPiece = null;
-        Main.selected = null;
-        Main.gameStatus = "select_unit";
-        Main.turnCount++;
-        Main.errorMsg = "";
+        currentPos = g.destination;
+        g.destination = null;
+        g.selectedPiece = null;
+        g.selected = null;
+        g.status = "select_unit";
+        g.turnCount++;
+        g.errorMsg = "";
     }
 
     public int getPathObstructedIdx(ArrayList<Coord> path, Board b) {
