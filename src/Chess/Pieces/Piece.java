@@ -55,10 +55,16 @@ abstract public class Piece{
         final int[] idx = {path.size()};
         path.forEach(pt -> {
             Piece p = b.findPieceAtCoord(pt);
+            if (idx[0] != path.size()) {
+                return;
+            }
             if (p != null) {
                 if (p.team == this.team) {
                     //path obstructed at
                     idx[0] = path.indexOf(pt);
+                }
+                if (p.team != this.team) {
+                    idx[0] = path.indexOf(pt)+1;
                 }
             }
         });
