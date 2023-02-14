@@ -70,4 +70,18 @@ abstract public class Piece{
         });
         return idx[0];
     }
+
+    public boolean isTileObstructed(Coord pt, Board b) {
+        Piece p = b.findPieceAtCoord(pt);
+        if (p != null) {
+            if (p.team == this.team) {
+                //pt occupied
+                return true;
+            }
+            if (p.team != this.team) {
+                return false;
+            }
+        }
+        return false;
+    }
 }

@@ -3,9 +3,11 @@
   <component name="ChangeListManager">
     <list default="true" id="b5fc3445-c721-4b85-89df-abf7bc49e765" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Chess/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Chess/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Chess/Pieces/Bishop.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Chess/Pieces/Bishop.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Chess/Pieces/King.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Chess/Pieces/King.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Chess/Pieces/Knight.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Chess/Pieces/Knight.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Chess/Pieces/Piece.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Chess/Pieces/Piece.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Chess/Pieces/Queen.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Chess/Pieces/Queen.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Chess/Pieces/Rook.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Chess/Pieces/Rook.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -80,7 +82,8 @@
       <workItem from="1675985457619" duration="383000" />
       <workItem from="1675991961473" duration="1257000" />
       <workItem from="1676004961772" duration="2294000" />
-      <workItem from="1676047887754" duration="325000" />
+      <workItem from="1676047887754" duration="479000" />
+      <workItem from="1676409674205" duration="1554000" />
     </task>
     <servers />
   </component>
